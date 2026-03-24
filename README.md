@@ -20,18 +20,18 @@ npm install
 npm run dev
 ```
 
-Open the URL shown in your terminal (usually `http://localhost:5173`). You'll see the app header and footer, but the middle will be mostly empty — that's expected! Your job is to complete the TODO comments in each file.
+Open the URL shown in your terminal (usually `http://localhost:5173`) to run the app locally.
 
 ## What's Provided
 
 - ✅ **`App.css`** — All styling is done for you. You should not need to modify this file.
 - ✅ **`types.ts`** — TypeScript interfaces and types are defined.
 - ✅ **`main.tsx`** — App entry point (no changes needed).
-- ✅ **Component skeletons** — Each component has the structure and TODO comments guiding you.
+- ✅ **Component files** — The app is organized by reusable UI components.
 
 ## What You Need To Build
 
-Work through the TODO comments in each file. Here's the recommended order:
+If you want to review or rebuild the project as practice, this is a useful order:
 
 ### 1. `components/TransactionItem.tsx` (Start here — smallest component)
 - Define the props interface
@@ -91,7 +91,7 @@ Here's what the finished app looks like:
 
 - Start small — get one component rendering before moving to the next
 - Use the browser console to debug (F12 → Console tab)
-- The CSS classes in the TODO comments match the provided stylesheet exactly
+- The CSS class names used by the UI are defined in `App.css`
 - When in doubt, check the TypeScript types in `types.ts`
 - Test your form: try submitting with empty fields to make sure validation works
 
