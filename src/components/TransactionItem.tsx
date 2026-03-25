@@ -34,12 +34,16 @@ function TransactionItem({ transaction, onDelete }: TransactionItemProps) {
   return (
     <div className="transaction-item">
       <div className="transaction-info">
-        <div className={`category-icon ${categoryClasses[transaction.category]}`}>
+        <div
+          className={`category-icon ${categoryClasses[transaction.category]}`}
+        >
           {categoryEmojis[transaction.category]}
         </div>
-        
+
         <div className="transaction-details">
-          <div className="transaction-description">{transaction.description}</div>
+          <div className="transaction-description">
+            {transaction.description}
+          </div>
           <div className="transaction-meta">
             <span>{transaction.category}</span>
             <span>•</span>

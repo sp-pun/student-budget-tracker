@@ -31,18 +31,20 @@ function App() {
     description: string,
     amount: number,
     category: Category,
-    type: "income" | "expense"
+    type: "income" | "expense",
   ) => {
-    // Data rule: all income transactions are stored under the "Income" category.
+    // Create a new transaction object with a unique ID and date string.
     const newTransaction: Transaction = {
       id: nextId,
       description,
       amount,
+      // All income transactions are stored under the "Income" category.
       category: type === "income" ? "Income" : category,
       type,
       date: new Date().toISOString().split("T")[0],
     };
 
+    // Add the new transaction to the front of the transactions array, then increment nextId for the next transaction.
     setTransactions([newTransaction, ...transactions]);
     setNextId(nextId + 1);
   };
@@ -52,6 +54,7 @@ function App() {
     setTransactions(transactions.filter((t) => t.id !== id));
   };
 
+  // Calculate summary values on every render based on the current transactions list.
   const summary = calculateSummary(transactions);
   return (
     <div className="app">

@@ -6,7 +6,7 @@ interface TransactionFormProps {
     description: string,
     amount: number,
     category: Category,
-    type: "income" | "expense"
+    type: "income" | "expense",
   ) => void;
 }
 
@@ -36,12 +36,7 @@ function TransactionForm({ onAddTransaction }: TransactionFormProps) {
     if (isNaN(parsedAmount) || parsedAmount <= 0) return;
 
     // Pass form values to App, where the income-category rule is enforced before save.
-    onAddTransaction(
-      description.trim(),
-      parsedAmount,
-      category,
-      type
-    );
+    onAddTransaction(description.trim(), parsedAmount, category, type);
 
     setDescription("");
     setAmount("");
@@ -54,7 +49,6 @@ function TransactionForm({ onAddTransaction }: TransactionFormProps) {
     <div className="form-card">
       <h2>➕ Add Transaction</h2>
       <form onSubmit={handleSubmit}>
-
         {/* Income / Expense Toggle */}
         <div className="type-toggle">
           <button
@@ -117,7 +111,9 @@ function TransactionForm({ onAddTransaction }: TransactionFormProps) {
               onChange={(e) => setCategory(e.target.value as Category)}
             >
               {expenseCategories.map((cat) => (
-                <option key={cat} value={cat}>{cat}</option>
+                <option key={cat} value={cat}>
+                  {cat}
+                </option>
               ))}
             </select>
           </div>

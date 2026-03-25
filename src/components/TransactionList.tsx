@@ -18,7 +18,10 @@ const categoryFilters: ("All" | Category)[] = [
   "Other",
 ];
 
-function TransactionList({ transactions, onDeleteTransaction }: TransactionListProps) {
+function TransactionList({
+  transactions,
+  onDeleteTransaction,
+}: TransactionListProps) {
   // Track which category is selected; "All" means no category filtering.
   const [activeFilter, setActiveFilter] = useState<"All" | Category>("All");
 
